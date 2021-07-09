@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions Lecture</title>
+</head>
+<body>
+<script>
+    "use strict";
+<!--    /*-->
+<!--        OUTLINE OF LECTURE EXAMPLES-->
+<!--        Defining a Function (Declaration vs. Expression)-->
+<!--        Calling / Invoking a Function-->
+<!--        Return Statement-->
+<!--        Return Value vs. Definition-->
+<!--        Arguments and Parameters-->
+<!--        !! Mini-exercises !!-->
+<!--        Function Scope-->
+<!--        Pure Functions and Side Effects-->
+<!--        Higher Order Functions-->
+<!--        IIFE-->
+<!--    */-->
+<!--    // ================ Defining a Function (Declaration vs. Expression)-->
+<!--    /* Function Declaration...-->
+<!--        function doSomething(OPTIONAL_PARAMETERS) {-->
+<!--            // doing something...-->
+<!--            return SOME_VALUE;-->
+<!--        }-->
+<!--    */-->
+<!--    function logSomeStuff() {-->
+<!--         console.log('Hello');-->
+<!--         console.log('some stuff');-->
+<!--         console.log('Goodbye');-->
+<!--     }-->
+
+<!--     logSomeStuff()-->
+<!--    /* Function Expression-->
+<!--        var someVariable = function(OPTIONAL_PARAMETERS) {-->
+<!--            // do something-->
+<!--            return SOME_VALUE;-->
+<!--        };-->
+<!--    */-->
+<!--    var logSomeStuff = function() {-->
+<!--         console.log('Hello');-->
+<!--         console.log('Goodbye');-->
+<!--     }-->
+<!--    // ================ Calling / Invoking a Function-->
+<!--    logSomeStuff()-->
+
+<!--    // or-->
+
+<!--    // var doTheSameThing = logSomeStuff();-->
+
+<!--    // doTheSameThing();-->
+
+<!--    // when declaring/invoking functions-->
+
+
+<!--    // logSomeStuff();-->
+<!--    // ================ Return Statement-->
+<!--    function returnValue() {-->
+<!--        console.log('Do something')-->
+<!--         return 5;-->
+<!--         // return 10; unreachable code bc only returns one at a time-->
+<!--     }-->
+<!--     // must type in console returnValue() to get 5 but if below-->
+<!--     console.log(returnValue());-->
+
+<!--    // 5 will show up on its own in console but if no value to return then it will show as undefined-->
+
+<!--    // nothing shows in console here-->
+<!--    // or console.log(returnValue()) same thing as console.log(5)-->
+<!--    // console.log(returnValue() + returnValue()) shows up as 10 in console-->
+
+
+<!--    function returnValue() {-->
+<!--        return 6;-->
+<!--    }-->
+<!--     var x = returnValue();-->
+<!--    var y = returnValue-->
+
+<!--    console.log(x)-->
+<!--    console.log(y)-->
+<!--    //-->
+<!--    //-->
+<!--    //-->
+<!--    //-->
+<!--    console.log(returnValue + returnValue)-->
+<!--    // will post function twice rather than "12" bc no invocation-->
+
+
+<!--    function sayName(name) {-->
+
+<!--    }-->
+
+<!--    sayName('Christina')-->
+<!--    sayName('Teeko')-->
+<!--    sayName('Elyphaeba')-->
+
+
+<!--    function returnInput(input) {-->
+<!--        return input-->
+<!--    }-->
+<!--    console.log(returnInput())-->
+<!--    // will get back NaN-->
+
+
+<!--    function returnInput(input1, input2, input3){-->
+<!--        return input1 + input2 + input3-->
+<!--    }-->
+
+<!--    console.log(returnInput(1, 2, 3))-->
+
+<!--    // will get back 6-->
+
+<!--    function returnFavColor() {-->
+<!--        var color = prompt("plz enter your fav color!")-->
+<!--        return ("Your favorite color is: " + color)-->
+<!--    }-->
+<!--    alert(returnFavColor())-->
+
+<!--    //looks differnt than if prompt is outside of function-->
+<!--    // purpose to get info and format output-->
+
+<!--    var color = prompt("plz enter your fav color!")-->
+<!--    function returnFavColor() {-->
+<!--        return ("Your fav color is: " + color)-->
+<!--    }-->
+<!--    alert(returnFavColor())-->
+
+
+
+    // this approach better bc more focused on user input
+    // also easier to test bc more focused function
+
+    // var inside of function is local variable
+    // if no sayName (argument) then comes back undefined
+    // so console.log(returnInput(a number, a boolean, a string etc.)) will get back exactly what u put in
+
+
+
+    // console.log(returnValue());
+    // ================ Return Value vs. Definition
+    // var x = returnValue();
+    // var y = returnValue;
+    // ================ Arguments and Parameters
+    // defining a parameter
+    // function returnInput(input) {
+    //     return input;
+    // }
+    //
+    // console.log(returnInput(4));
+    // console.log(returnInput(2));
+    // console.log(returnInput(false));
+    // console.log(returnInput('bob'));
+    // calling function without expected arguments/inputs
+    // console.log(returnInput());
+    // calling function with additional arguments/inputs
+    // console.log(returnInput(1, 2, 3));
+    // ================ Local Variables
+    // function addTwoToInput(input) {
+    //     var x = 2;
+    //     return x + input;
+    // }
+    // ================ !! Mini-exercises !!
+    // Write a function, returnFive, that returns the number five. No inputs should be defined.
+
+ //    function returnFive() {
+ //          return 5;
+ //    }
+ // returnFive()
+
+
+    // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is the number 5 or the string "5". Return false otherwise.
+
+    // function isFive(input) {
+    //     if (input === 5 || input === "5")
+    //         return true
+    //     else return false
+    // }
+    // console.log(isFive(5))
+
+    // or
+    //function isFive(input) {
+    // return '5' == 5;
+    // }
+
+    // or
+    // prompt("Type input here.")
+    // function isFive(input) {
+    // var output = false
+    // if (input === 5 || input === "5"){
+    // output = true
+    // }
+    // return output
+    // }
+    // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
+
+    // function isShortWord(aString) {
+    //  if (aString.length < 5) {
+    //     return true
+    //     } else {
+    //     return false
+    //   }
+    // }
+    // console.log(isShortWord())
+    // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the passed arguments are the same length. Return false otherwise.
+
+    // function isSameLength(Str1, Str2) {
+    //     if (Str1.length === Str2.length)
+    //         return true
+    //      else return false
+    // }
+
+    // console.log(isSameLength(input1, input2))
+
+    // or
+    // function isSameLength(Str1, Str2) {
+    // return Str1.length === Str2.length
+    // }
+
+
+    // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
+
+    // function getSmallerSegment(Str, Num) {
+    //     var output = ''
+    //         return Str.substring(0, Num).toLowerCase()
+    //
+    // }
+
+    // console.log(getSmallerSegment(", 5));
+
+    // example input: getSmallerSegment("Codeup", 3)
+    // example output: "cod"
+    // Refactor the following code to use functions...
+
+    // function addNums(num1, num2) {
+    //     return num1 + num2
+    //
+    // }
+    //
+    // console.log('The result of num1 + num2 is: ' + addNums(2,4))
+    // console.log('The result of num1 + num2 is: ' + addNums(5,1))
+    // console.log('The result of num1 + num2 is: ' + addNums(10,5))
+
+    // refactored for the following:
+
+    // var x = 2;
+    // var y = 4;
+    // var totalXY = x + y;
+    // console.log('The result of num1 + num2 is: ' + totalXY);
+    //
+    // var a = 5;
+    // var b = 1;
+    // var totalAB = a + b;
+    // console.log('The result of num1 + num2 is: ' + totalAB);
+    //
+    // var c = 10;
+    // var d = 5;
+    // var totalCD = c + d;
+    // console.log('The result of num1 + num2 is: ' + totalCD);
+
+
+    // ================ Function Scope
+    // SCOPE EXAMPLE
+    // var keyword creates "Function Scope" variables
+    // var globalVar = "Look, I'm Global!"; // declare a global variable
+    //
+    // function scopeExample() {
+    //     var localVar = "Look, I'm Local!"; // declare a local variable
+    //     alert(localVar); // localVar is accessible here
+    //     alert(globalVar); // globalVar is accessible here
+    //     globalVar = "What now?";
+    // }
+    //
+    // scopeExample();
+    // alert(globalVar);
+    // alert(localVar);
+    // EXTRA SCOPE EXAMPLE
+    // var x = 300;
+    // var y = 100;
+    //
+    // function scopeExample2(x, y) {
+    //     var x = 1;
+    //     var y = 2;
+    //     console.log('x: ' + x + ' y: ' + y);
+    //     return x + y;
+    // }
+    //
+    // scopeExample2();
+    // console.log('x: ' + x + ' y: ' + y);
+    // ================ Pure Functions and Side Effects
+    // // function with side effects
+    // var word = "hello";
+    //
+    // function shoutWord() {
+    //     return word.toLocaleUpperCase();
+    // }
+    //
+    // // pure function
+    // function shoutWord(word) {
+    //     return word.toLocaleUpperCase();
+    // }
+    //
+    //
+    // // function with side effects
+    // var startCount = 1;
+    //
+    // function count() {
+    //     return ++count;
+    // }
+    //
+    // // pure function
+    // function count(startCount) {
+    //     return ++startCount;
+    // }
+    // ================ Higher Order Functions
+    // function returnFive() {
+    //     return 5;
+    // }
+    // addTwo is a "Higher Order Function" because it takes in other functions as arguments
+    // functions that return a function are also "Higher Order Functions"
+    // function addTwo(number) {
+    //     return number() + 2;
+    // }
+    //
+    // console.log(addTwo(returnFive)); // Callback function "returnFive" is passed to addTwo
+    // console.log(addTwo(function() { // Anon function passed to addTwo()
+    //     return 10;
+    // }))
+    // other common higher order functions built in to JS: setInterval, setTimeout, map, filter, reduce, fetch
+    // ================ IIFE
+    // See additional example
+
+    (function(){
+
+    })()
+
+    (function (){
+
+    })();
+
+    (function(){
+
+    })()
+
+    // able to immediately invoke it
+</script>
+</body>
+</html>
+Collapse
+
+
+
+
+
+
+
+
+
+
