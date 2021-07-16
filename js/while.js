@@ -20,6 +20,8 @@
 // 32768
 // 65536
 
+
+
 // var number = 2
 // while (number < 70000) {
 //     console.log(number)
