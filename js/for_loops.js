@@ -32,15 +32,24 @@
 // 199 is odd
 // ...
 
-//     for ( count = 0; count < 10, count++){
-// var randomNumber = Math.floor(Math.random() * 181 ) * 20;
-// if (randomNum 5 2 === 0) {
-// console.log(randomNum + " is even")
-// } else {
-//     console.log(randomNum + "is odd")
-//             }
-//         }
+    for(count = 0; count < 10; count++) {
+var randomNumber = Math.floor(Math.random() * 181 ) + 20;
+if (randomNumber % 2 === 0) {
+console.log(randomNumber + " is even")
+} else {
+    console.log(randomNumber + " is odd")
+            }
+        }
 
+// for (i = 0; i < 10; i++) {
+//     var randomNumber = Math.floor(Math.random() * 181) + 20
+//     if (randomNumber < 20 || randomNumber > 200) {
+//         console.log(randomNumber)
+//         console.log("Wow!")
+//     } else if (randomNumber)
+//         console.log(randomNumber)
+//     console.log("Ayy")
+// }
 
 
 //4. Create a for loop that uses console.log to create the output shown below.
@@ -56,14 +65,14 @@
 // 88888888
 // 999999999
 
-// function numberPyramid(num) {
-//     for(var count = 1; count <= num; count++) {
-//         var stringToDisplay = "";
-//     for(var duration = 0; duration < count; duration++) {
-//  stringToDisplay += count.toString(); }
-//     console.log(stringToDisplay);
-// }
-//     } numberPyramid(9);
+function numberPyramid(num) {
+    for(var count = 1; count <= num; count++) {
+        var stringToDisplay = "";
+    for(var duration = 0; duration < count; duration++) {
+ stringToDisplay += count.toString(); }
+    console.log(stringToDisplay);
+}
+    } numberPyramid(9);
 
 // or
 
@@ -90,11 +99,11 @@
 
 // or
 
-// var crazyOne = 1
-// for (count = 1; count < 10; count++) {
-//     console.log(count + crazyOne)
-//     crazyOne = crazyOne.toString() + 1
-// }
+var pyramid = 1
+for (count = 1; count < 10; count++) {
+    console.log(count + pyramid)
+    pyramid = pyramid.toString() + 1
+}
 
 // 5. Create a for loop that uses console.log to create the output shown below.
 //
