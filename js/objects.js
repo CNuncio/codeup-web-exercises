@@ -48,19 +48,19 @@
     //  * and console.log the relevant messages for each person
     //  */
 
-    var shopper = [
-        {name: 'Cameron', amount: 180},
-        {name: 'Ryan', amount: 250},
-        {name: 'George', amount: 320}
-    ];
-
-    shopper.forEach(function (shopper) {
-        if (shopper.amount > 200) {
-            console.log("Congrats to: " + shopper.name + " ! You have spent over $200! Your current total is $" + shopper.amount + " . You will now get a 12% discount! Your new discounted total is: " + (shopper.amount - (shopper.amount * .12)) + " .")
-        } else {
-            console.log("Sorry " + shopper.name + " , you did not spend over $200. You only spent $" + shopper.amount)
-        }
-    })
+    // var shopper = [
+    //     {name: 'Cameron', amount: 180},
+    //     {name: 'Ryan', amount: 250},
+    //     {name: 'George', amount: 320}
+    // ];
+    //
+    // shopper.forEach(function (shopper) {
+    //     if (shopper.amount > 200) {
+    //         console.log("Congrats to: " + shopper.name + " ! You have spent over $200! Your current total is $" + shopper.amount + " . You will now get a 12% discount! Your new discounted total is: " + (shopper.amount - (shopper.amount * .12)) + " .")
+    //     } else {
+    //         console.log("Sorry " + shopper.name + " , you did not spend over $200. You only spent $" + shopper.amount)
+    //     }
+    // })
 
     //w/o forEach loop :
     //function calculateDiscount(amount, threshold, discountPercentage) {
