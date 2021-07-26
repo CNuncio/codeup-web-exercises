@@ -1,0 +1,14 @@
+
+h1 {
+    text-align: center
+}
+
+.heading {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+body {
+    background-image: url("paper.gif");
+    background-color: steelblue;
+}
