@@ -8,8 +8,8 @@
 <form method="POST" action="https://request-inspector.glitch.me/">
 
     <div>
-        <label for="username">Username</label>
-        <input id="username" name="username" placeholder="Enter your username" type="text">
+        <label for="email">Username</label>
+        <input id="email" name="email" placeholder="Enter your email" type="text">
     </div>
     <div>
         <label for="password">Password</label>
@@ -20,73 +20,41 @@
     </div>
 </form>
 
-<h2> Compose an Email </h2>
+<h2> Bio: </h2>
 
 <form method="POST" action="http://request-inspector.glitch.me/">
     <div>
-        <input type="text" id="to" name="to" value="" placeholder="To">
-        <input type="text" id="from" name="from" value="" placeholder="From">
-        <input type="text" id="subject" name="subject" value="" placeholder="Subject">
-        <br><textarea id="email_body" name="email_body" rows="5" cols="40">Content Here</textarea>
+        <br><textarea id="bio_body" name="bio_body" rows="5" cols="40">Content Here</textarea>
     </div>
     <div>
         <button type="submit">Send</button>
     </div>
     <div>
-        <input type="checkbox" id="sent_folder" name="Save Copy to Sent Folder?" value="yes" checked>
-        <label for="sent_folder">Save Copy to Sent Folder</label>
-    </div>
-    <div>
-        <h2>Multiple Choice Test</h2>
+        <h2>How did you hear about us?</h2>
 
-        <p>Who wrote Doctor Sleep?</p>
         <label>
-            <input type="radio" name="q1" value="J. K. Rowling">
-            J. K. Rowling
+            <input type="radio" name="q1" value="Billboard">
+            Billboard
         </label>
         <label>
-            <input type="radio" name="q1" value="Suzanne Collins">
-            Suzanne Collins
+            <input type="radio" name="q1" value="Radio advertisement">
+            Radio Advertisement
         </label>
         <label>
-            <input type="radio" name="q1" value="Stephen King">
-            Stephen King
+            <input type="radio" name="q1" value="Internet advertisement">
+            Internet advertisement
         </label>
         <label>
-            <input type="radio" name="q1" value="James Patterson">
-            James Patterson
+            <input type="radio" name="q1" value="Other">
+            Other
             <br><button type="submit">Submit</button>
         </label>
 
-        <p>What is Doctor Sleep the sequel to?</p>
-        <label>
-            <input type="radio" name="q2" value="The Goblet of Fire">
-            The Goblet of Fire
-        </label>
-        <label>
-            <input type="radio" name="q2" value="The Two Towers">
-            The Two Towers
-        </label>
-        <label>
-            <input type="radio" name="q2" value="It">
-            It
-        </label>
-        <label>
-            <input type="radio" name="q2" value="The Shining">
-            The Shining
-            <br><button type="submit">Submit</button>
-        </label>
-
-        <p> What are the titles of the Lord of the Rings books?</p>
-        <label><input type="checkbox" id="os1" name="os1[]" value="The Fellowship of the Ring"> The Fellowship of the Ring</label>
-        <br><label><input type="checkbox" id="os2" name="os[]" value="The Sorcerer's Stone"> The Sorcerer's Stone</label>
-        <br><label><input type="checkbox" id="os3" name="os[]" value="A New Hope"> A New Hope</label>
-        <br><label><input type="checkbox" id="os1" name="os[]" value="The Hobbit"> The Hobbit</label>
-        <br><label><input type="checkbox" id="os2" name="os[]" value="The Two Towers"> The Two Towers</label>
-        <br><label><input type="checkbox" id="os3" name="os[]" value="The Last Stand"> The Last Stand</label>
-        <br><label><input type="checkbox" id="os2" name="os[]" value="The Final Frontier"> The Final Frontier</label>
-        <br><label><input type="checkbox" id="os3" name="os[]" value="The Return of the King"> The Return of the King</label>
-        <br><button type="submit">Submit</button>
+        <p> How did you hear about us?</p>
+        <label><input type="checkbox" id="os1" name="os1[]" value="Billboard"> Billboard</label>
+        <br><label><input type="checkbox" id="os2" name="os[]" value="Radio advertisement"> Radio Advertisement</label>
+        <br><label><input type="checkbox" id="os3" name="os[]" value="Internet advertisement"> Internet advertisement</label>
+        <br><label><input type="checkbox" id="os1" name="os[]" value="Other"> Other </label>
 
         <p> Which of these is not currently a foreign leader?</p>
         <label for="Q3">Choose from the following: </label>
