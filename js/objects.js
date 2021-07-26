@@ -84,11 +84,41 @@
     //  * array
 
     var books = [
-         {title: 'All Tomorrows', author: "C. M. Koseman"},
-         {title: 'Wiccapedia', author: "Shawn Robbins"},
-        {title: 'Night', author: "Elie Weisel"},
-        {title: "A Separate Peace", author: "John Knowles"},
-        {title: "Fahrenheit 451", author: "Ray Bradbury"}
+        {
+            title: 'All Tomorrows',
+            author: {
+                firstName: "C. M.",
+                lastName: "Koseman"
+            }
+        },
+        {
+            title: 'Wiccapedia',
+            author: {
+                firstName: "Shawn",
+                lastName: "Robbins"
+            }
+        },
+        {
+            title: 'Night',
+            author: {
+                firstName: "Elie",
+                lastName: "Weisel"
+            }
+        },
+        {
+            title: 'A Separate Peace',
+            author: {
+                firstName: "John",
+                lastName: "Knowles"
+            }
+        },
+        {
+            title: 'Fahrenheit 451',
+            author: {
+                firstName: "Ray",
+                lastName: "Bradbury"
+            }
+        }
      ];
 
     //  * Example:
@@ -118,9 +148,15 @@
     //  *      Title: A Brief History of Time
     //  *      Author: Stephen Hawking
     //  *      ---
-    //  *      ...
-    //  */
-    //
+
+books.forEach(function(book, index) {
+    var output = "Book number " + (index + 1) + "\n";
+    output += "Title: " + book.title + '\n';
+    output += "Author name: " + book.author.firstName + " " + book.lastName + "\n";
+    output += "---";
+    console.log(output)
+})
+
     // /**
     //  * Bonus:
     //  * - Create a function named `createBook` that accepts a title and author

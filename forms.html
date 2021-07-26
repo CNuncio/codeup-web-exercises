@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" placeholder="Enter your username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter your password">
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+<h2> Compose an Email </h2>
+
+<form method="POST" action="http://request-inspector.glitch.me/">
+    <div>
+        <input type="text" id="to" name="to" value="" placeholder="To">
+        <input type="text" id="from" name="from" value="" placeholder="From">
+        <input type="text" id="subject" name="subject" value="" placeholder="Subject">
+        <br><textarea id="email_body" name="email_body" rows="5" cols="40">Content Here</textarea>
+    </div>
+    <div>
+        <button type="submit">Send</button>
+    </div>
+    <div>
+        <input type="checkbox" id="sent_folder" name="Save Copy to Sent Folder?" value="yes" checked>
+        <label for="sent_folder">Save Copy to Sent Folder</label>
+    </div>
+    <div>
+        <h2>Multiple Choice Test</h2>
+
+        <p>Who wrote Doctor Sleep?</p>
+        <label>
+            <input type="radio" name="q1" value="J. K. Rowling">
+            J. K. Rowling
+        </label>
+        <label>
+            <input type="radio" name="q1" value="Suzanne Collins">
+            Suzanne Collins
+        </label>
+        <label>
+            <input type="radio" name="q1" value="Stephen King">
+            Stephen King
+        </label>
+        <label>
+            <input type="radio" name="q1" value="James Patterson">
+            James Patterson
+            <br><button type="submit">Submit</button>
+        </label>
+
+        <p>What is Doctor Sleep the sequel to?</p>
+        <label>
+            <input type="radio" name="q2" value="The Goblet of Fire">
+            The Goblet of Fire
+        </label>
+        <label>
+            <input type="radio" name="q2" value="The Two Towers">
+            The Two Towers
+        </label>
+        <label>
+            <input type="radio" name="q2" value="It">
+            It
+        </label>
+        <label>
+            <input type="radio" name="q2" value="The Shining">
+            The Shining
+            <br><button type="submit">Submit</button>
+        </label>
+
+        <p> What are the titles of the Lord of the Rings books?</p>
+        <label><input type="checkbox" id="os1" name="os1[]" value="The Fellowship of the Ring"> The Fellowship of the Ring</label>
+        <br><label><input type="checkbox" id="os2" name="os[]" value="The Sorcerer's Stone"> The Sorcerer's Stone</label>
+        <br><label><input type="checkbox" id="os3" name="os[]" value="A New Hope"> A New Hope</label>
+        <br><label><input type="checkbox" id="os1" name="os[]" value="The Hobbit"> The Hobbit</label>
+        <br><label><input type="checkbox" id="os2" name="os[]" value="The Two Towers"> The Two Towers</label>
+        <br><label><input type="checkbox" id="os3" name="os[]" value="The Last Stand"> The Last Stand</label>
+        <br><label><input type="checkbox" id="os2" name="os[]" value="The Final Frontier"> The Final Frontier</label>
+        <br><label><input type="checkbox" id="os3" name="os[]" value="The Return of the King"> The Return of the King</label>
+        <br><button type="submit">Submit</button>
+
+        <p> Which of these is not currently a foreign leader?</p>
+        <label for="Q3">Choose from the following: </label>
+        <select id="Q3" name="Q3[]" multiple>
+            <br><option value="Emmanuel Macron">Emmanuel Macron</option>
+            <option value="Xi Jinping">Xi Jinping</option>
+            <option value="Joe Biden">Joe Biden</option>
+            <option value="Boris Johnson">Boris Johnson</option>
+            <option value="Yoshihide Suga">Yoshihide Suga</option>
+            <option value="Sanada Genjiro Yukimura">Sanada Genjiro Yukimura</option>
+            <option value="Moon Jae-In">Moon Jae-In</option>
+            <option value="Khaltmaagin Battulga">Khaltmaagin Battulga</option>
+            <option value="Andres Obrador">Andres Obrador</option>
+        </select>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+</form>
+
+<form method="GET" action="http://request-inspector.glitch.me/">
+    <h2>Select Testing</h2>
+
+    <p>Do you play video games?</p>
+
+    <label for="Q1">Select yes or no: </label>
+    <select id="Q1" name="Select yes or no:">
+        <option value="1"selected>Yes</option>
+        <option value="0">NO</option>
+    </select>
+    <br><button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
