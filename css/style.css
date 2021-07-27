@@ -9,6 +9,35 @@ h1 {
 }
 
 body {
-    background-image: url("paper.gif");
+    /*background-image:https://www.pexels.com/photo/blue-sky-281260/("pexels-francesco-ungaro-2812.jpg);*/
     background-color: steelblue;
+}
+
+ul.changed {
+    list-style-type: square;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    padding: 10px ;
+
+}
+
+a:link {
+    color:white;
+}
+/* visited link (:visited) */
+a:visited {
+    color:deepskyblue;
+}
+/* mouse hover over link (:hover) */
+a:hover {
+    color: blue;
+}
+/* active or selected link (:active) */
+a:active {
+    color:antiquewhite;
 }
