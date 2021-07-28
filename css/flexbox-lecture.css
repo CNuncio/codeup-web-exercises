@@ -1,0 +1,85 @@
+body {
+    box-sizing: border-box;
+}
+.flexbox, .flex-item {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    /*changes main axis vertically*/
+    /*defines main axis*/
+    /*:  row-reverse;*/
+    /*changes main start and end*/
+
+    /*:  column-reverse;*/
+/*    changes axis vertically in reverse*/
+    flex-wrap: wrap;
+/*    can have nowrap or wrap-reverse and flow up instead of down*/
+/*    height: 400px*/
+/*    flex-flow: column-reverse wrap ;*/
+/*    justify-content: space-evenly;*/
+/*    distributed along main axis*/
+/*    flex-end clumps it in reverse to flex start*/
+/*    center makes it nice and cneter as apposed to start or end */
+/*    space-between allows for more space btwn boxes*/
+/*    space-around shows as if margins around each box */
+/*    / space-evenly puts even distribution of space btwn collapsed boxes */
+/*    try stretch */
+/*     align-items controls flex lines and how they distribute along container cross-axis and stretch is default*/
+/*    align-items: stretch*/
+    align-items: flex-start;
+/*    align-content controls how extra cross axis space is distributed btwn and around flex lines, applies only to multi-line containers. has no effect on nowrap amd single line containers */
+/*align-content: space-evenly;*/
+/*    height: 900px*/
+
+}
+
+/*.large-font {*/
+/*    font-size: 150%*/
+/*}*/
+/* .bigger-margin {*/
+/*     margin-top: -30px*/
+/* }*/
+
+/*.five {*/
+/*flex-grow: 1;*/
+/*}*/
+/*.four {*/
+/*    flex-grow: .80;*/
+/*}*/
+/*.three {*/
+/*    flex-grow: .60;*/
+/*}*/
+/*.two {*/
+/*    flex-grow: .40;*/
+/*}*/
+/*.one {*/
+/*    flex-grow: .20;*/
+/*}*/
+
+/*define if a flex item can grow when there is available space, and how much it grows proportionally to its siblings */
+
+/*.one {*/
+/*align-self: flex-end;*/
+/*}*/
+/*.two {*/
+/*    align-self: center;*/
+/*}*/
+/*.three {*/
+/*    align-self: center;*/
+/*}*/
+/*.four {*/
+/*    align-self: flex-start;*/
+/*}*/
+/*order can alter order of items on a case by case basis and default is 0*/
+
+/*.one {*/
+/*    order: 1;*/
+/*}*/
+
+.one {
+    order: -1;
+}
