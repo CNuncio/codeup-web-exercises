@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  "use strict";
+
+  /*
+
+      // Create a function, analyzeArray, that takes in a an array and returns an object with information about the passed array.
+      // The function should return an object with properties containing information about the array, including the lengthOfArray,
+      // containsAllStrings, and the combineResult of adding all elements together.
+
+
+
+
+   */
+      // EXAMPLE 1
+      //
+      //     analyzeArray([1, 2, 3]) returns...
+      //
+      //     {
+      //       lengthOfArray: 3,
+      //       containsAllStrings: false,
+      //       combineResult: 6
+      //     }
+      //
+      // EXAMPLE 2
+      //
+      //     analyzeArray(['a', 'b', 'c']) returns...
+      //
+      //     {
+      //       lengthOfArray: 3,
+      //       containsAllStrings: true,
+      //       combineResult: 'abc'
+      //     }
+      //
+      // EXAMPLE 3
+      //
+      //     analyzeArray(['bob', 100, null]) returns...
+      //
+      //     {
+      //       lengthOfArray: 3,
+      //       containsAllStrings: true,
+      //       combineResult: 'bob123null'
+      //     }
+
+  //need to loop over the array and for each element, combine into a value to udpate the object combineResult prop and check if element is a string or not then return the object containing the info for the array//
+
+  // function analyzeArray(array) {
+  //   var combine = array[0]
+  //   var isAllStrings = true
+  //   for (var i = 0; i < array.length; i++) {
+  //     if (i === 0) {
+  //     } else {
+  //       combine += array[i];
+  //     }
+  //     if (typeof array[i] !== 'string') {
+  //       isAllStrings = false
+  //     }
+  //   }
+  //     return {
+  //       lengthOfArray: array.length,
+  //       containsAllStrings: isAllStrings,
+  //       combineResult: combine
+  //        }
+  //     }
+  //   // console.log(combineResult)
+  //   // console.log(isAllStrings)
+  // console.log(analyzeArray( [1, 2 ,3]))
+  // // 6, false
+  // console.log(analyzeArray( ['a', 'b', 'c']))
+  // //abc, true
+  // console.log(analyzeArray( ['bob', 100, null]))
+  // //bob100null, false
+  //
+
+  //or:
+
+
+  function analyzeArray(arr) {
+    var combine = arr[0]; // assign starting value
+    var isAllStrings = true;
+    for (var i = 0; i < arr.length; i++) {
+      if (i !== 0) combine += arr[i]; // skip combining the first array element
+      if (typeof arr[i] !== 'string') isAllStrings = false; // switch to false if sad path
+    }
+    return {
+      lengthOfArray: arr.length,
+      containsAllStrings: isAllStrings,
+      combineResult: combine
+    };
+  }
+
+</script>
+</body>
+</html>
