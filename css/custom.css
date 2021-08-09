@@ -1,0 +1,39 @@
+body{
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*5rem*/
+}
+
+/*.custom-title{*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 30px;*/
+/*    margin-top: 1px;*/
+/*}*/
+
+/*.icon-su{*/
+/*    height: auto;*/
+/*    width: 13px;*/
+/*}*/
+
+/*.jumbotron{*/
+/*    background-image: url('img/pizza-jumbotron-unedited.png');*/
+/*}*/
+
+.container {
+    position: relative;
+    text-align: center;
+    color:darkslategray;
+}
+
+.container h1{
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 70%;
+    /*        rgpa(211, 211, 211, 0.65);*/
+    /*text-align: center;*/
+    width: 100%;
+}

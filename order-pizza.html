@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="css/order-pizza.css">
+  <link rel="stylesheet" href="css/custom.css">
     <meta charset="UTF-8">
     <title>Pizza Form</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
@@ -37,9 +37,9 @@
 <!--&lt;!&ndash;        </a>&ndash;&gt;-->
 <!--      </li>-->
 
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--      </li>-->
     <form class="form-inline my-2 my-lg-0 mr-auto">
       <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
       <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search Stores Near You!</button>
@@ -57,18 +57,38 @@
 </nav>
 
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container-fluid" >
+<!--    <div class="container-fluid">-->
       <main class="container">
+        <header class="jumbotron jumbotron-fluid px-0 mt-5 d-none d-md-block">
         <h1 class="display-4">Welcome to Pizza World!</h1>
         <img src="img/pizza-jumbotron-unedited.png"  class="img-fluid" alt="pizza image">
+        </header>
       </main>
-    </div>
-  </div>
+<!--  </div>-->
+
+<h2>Build Your Own Pizza!</h2>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="size-tab" data-toggle="tab" href="#size" role="tab" aria-controls="size" aria-selected="true"><a href="#" class="badge badge-secondary"> 1 </a> Size and Crust</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese" aria-selected="false"><a href="#" class="badge badge-secondary"> 2 </a> Cheese and Sauce</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false"><a href="#" class="badge badge-secondary"> 3 </a>Toppings</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
+
+
+<!--</header>-->
 
 </div>
 
-</div>
+
 </body>
 </html>
