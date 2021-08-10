@@ -38,26 +38,51 @@ mainHeader.innerHTML = "JavaScript is Cool."
 console.log(subHeader)
 
         // TODO: Set the text color of subHeader to blue
-subHeader.style.backgroundColor = 'blue';
+subHeader.style.color = 'blue';
 console.log(subHeader)
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
-console.log(listItems)
+console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
         var listItems = document.getElementsByTagName("li");
         console.log(listItems);
         for (var i = 0; i < listItems.length; i+= 2){
-            listItems[i].style.background = "grey";
+            listItems[i].style.color = "grey";
         }
         listItems[0].style.color = "blue";
 
+        // //or
+        // for (var i = 0; i < listItems.length; i++) {
+        //     var currentDbidValue = listeItems[i].getAttribute('data-dbid');
+        //     if (currentDbidValue === '1')  {
+        //         listItems[i].style.color = 'blue'
+        //     } else if (i % 2 === 0) {
+        //         listItems[0].style.color = "grey"
+        //     }
+        // }
+
+        //or
+
+
+        // for (var i = 0; i < listItems.length; i+= 2){
+        //     listItems[i].style.color = "grey";
+        //
+        //     var blueLi = document.querySelector('li[data-dbid='1']");
+        //         blueLi.style.color = 'blue'
+
+
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.querySelector(".sub-paragraph");
+        // var subParagraphs = document.querySelector(".sub-paragraph");
+
+        var subParagraphs = document.getElementsByClassName('sub-paragraph');
         console.log(subParagraphs)
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        // subParagraphs.innerText = "Mission Accomplished!"
+        //or
+        var subParagraphs = subParagraphs[0]
         subParagraphs.innerText = "Mission Accomplished!"
 
     })();
