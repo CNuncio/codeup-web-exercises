@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// Create a function, filterOutBobUsers, that takes in an array of user objects with firstName and lastName properties and returns an array of user objects without any Bob users. The case of the Bob names does not matter.
+        var users = [
+  {
+    firstName: 'bob',
+    lastName: 'Smith'
+  },
+  {
+    firstName: 'BOB',
+    lastName: 'Smith'
+  },
+  {
+    firstName: 'Fred',
+    lastName: 'Smith'
+  },
+  {
+    firstName: 'Cathy',
+    lastName: 'Smith'
+  },
+  {
+    firstName: 'Dawn',
+    lastName: 'Smith'
+  }
+]
+
+
+function filterOutBobUsers(users) {
+
+  for (var i = 0; i < users.length; i++) {
+    var outputUsers = [];
+if (users[i].firstName.toLowerCase() !== 'Bob'){
+outputUsers.push(users[i]);
+}
+    }
+return outputUsers
+  }
+
+  console.log(filterOutBobUsers(users));
+
+
+        //or
+
+
+// function filterOutBobUsers(users) {
+//     let outputUsers = [];
+//     users.forEach((user) => {
+//         if(user.firstName.toLowerCase() !== 'bob') {
+//             outputUsers.push(user);
+//         }
+//     })
+//     return outputUsers
+// }
+// console.log(filterOutBobUsers(users))
+
+
+
+//to filter out any name :
+
+
+// function filterOutBobUsers(usersm filterName) {
+//
+//     for (var i = 0; i < users.length; i++) {
+//         var outputUsers = [];
+//         if (users[i].firstName.toLowerCase() !== filterName.toLowerCase()){
+//             outputUsers.push(users[i]);
+//         }
+//     }
+//     return outputUsers;
+// }
+
+// console.log(filterOutBobUsers(users, //put name here));
+
+// // returns...
+//         [
+//         {
+//           firstName: 'Fred',
+//           lastName: 'Smith'
+//         },
+//                 {
+//                   firstName: 'Cathy',
+//                   lastName: 'Smith'
+//                 },
+//                 {
+//                   firstName: 'Dawn',
+//                   lastName: 'Smith'
+//                 }
+//         ]
+</script>
+</body>
+</html>

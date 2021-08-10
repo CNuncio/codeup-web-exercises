@@ -54,12 +54,12 @@ console.log(listItems)
         listItems[0].style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        var subParagraphs = document.querySelector(".sub-paragraph");
         console.log(subParagraphs)
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs.innerText = "Mission Accomplished!"
 
-        document.getElementsByClassName("sub-paragraph").innerHTML = "mission Accomplished!"
     })();
 </script>
 </body>
