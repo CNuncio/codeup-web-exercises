@@ -47,7 +47,7 @@ function logTest() {
 }
 
   testBtn.addEventListener('click', function () {
-    document.getElementsByTagName('body')[0].style.backgroundColor = 'firebrick';
+    document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
   });
 
 testBtn.addEventListener("click", logTest);
@@ -66,7 +66,43 @@ setTimeout(function() {
           - font-family to 'arial'
           - font-size to 2em
    */
+  var firstPara = document.querySelector('p');
+  console.log(firstPara)
 
+  firstPara.addEventListener('mouseover', function() {
+    // console.log('hovering...')
+    firstPara.style.color = 'red';
+    firstPara.style.fontFamily = 'arial';
+    firstPara.style.fontSize = '2em';
+  });
+
+
+  //or
+
+  // var firstPara = document.querySelector('p');
+  // console.log(firstPara)
+  //
+  // firstPara.addEventListener('mouseover', function() {
+  //   // console.log('hovering...')
+  //   this.style.color = 'red';
+  //   this.style.fontFamily = 'arial';
+  //   this.style.fontSize = '2em';
+  // });
+
+
+  //or
+
+  // var paragraphs = document.getElementsByTagName('p');
+  //
+  // for (var i = 0; i < paragraphs.length; i += 1) {
+  //   paragraphs[i].addEventListener('mouseover', function() {
+  //     // console.log('hovering...')
+  //     this.style.color = 'red';
+  //     this.style.fontFamily = 'arial';
+  //     this.style.fontSize = '2em';
+  //   });
+  //
+  // }
   // when double clicking the restore text button, make the first paragraph font size 1em
 
   // change the color of all paragraphs to blue when clicked
@@ -74,36 +110,43 @@ setTimeout(function() {
   // ==========================  Event Object
 
   // exploring the event object
+  //
+  // document.addEventListener(('click', function (){
+  //
+  //   console.log('clicked somewhere on the page...');
+  // })
 
   // change the background color of the page based on where the cursor clicks
 
-  // document.addEventListener("click", function(e) {
-  //
-  //    var red = e.screenX % 256;
-  //    var green = e.screenY % 256;
-  //    var blue = "ff";
-  //
-  //    console.log(e.screenX);
-  //    console.log(e.screenY);
-  //
-  //    red = red.toString(16);
-  //    green = green.toString(16);
-  //    blue = blue.toString(16);
-  //    document.body.style['background-color'] = "#" + red + green + blue;
-  //
-  // });
+  document.addEventListener("click", function(e) {
+
+     var red = e.screenX % 256;
+     var green = e.screenY % 256;
+     var blue = "ff";
+
+     console.log(e.screenX);
+     console.log(e.screenY);
+
+     red = red.toString(16);
+     green = green.toString(16);
+     blue = blue.toString(16);
+     document.body.style['background-color'] = "#" + red + green + blue;
+
+  });
 
   // ==========================  Keyboard Events and Prevent Default
 
-  // document.addEventListener("keydown", function(e) {
-  //     console.log(e);
-  //     console.log(e.code);
-  //     if (e.code === "Space") {
-  //       e.preventDefault();
-  //     }
-  // });
+  document.addEventListener("keydown", function(e) {
+      console.log(e);
+      console.log(e.code);
+      if (e.code === "Space") {
+        e.preventDefault();
+      }
+  });
 
 </script>
 
 </body>
 </html>
+
+

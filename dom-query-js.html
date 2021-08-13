@@ -7,6 +7,11 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
+<button id="btn1">Change Header</button>
+<button id="btn2">Change Sub-Header Color </button>
+<button id="btn3">Change List Colors</button>
+<button id="btn4">Change Body Text</button>
+<ul>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -28,34 +33,108 @@
 <script>
     (function() {
         "use strict";
+
+        // var testBtn = document.getElementById('btn')
+
+
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById('main-header');
 console.log(mainHeader)
+
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-mainHeader.innerHTML = "JavaScript is Cool."
+// mainHeader.innerHTML = "JavaScript is Cool."
+
+        //make button that changes it to "JavaScript is Cool."
+
+        // var buttonOne = document.getElementById('btn1');
+        //
+        // buttonOne.addEventListener('click', function () {
+        //     return mainHeader.innerHTML = 'Javascript is Cool';
+        // });
+
+        // to make it switch back and forth:
+
+        var buttonOne = document.getElementById('btn1');
+        buttonOne.addEventListener('click', function () {
+            console.log(buttonOne)
+            let currentText = document.getElementById('main-header').innerHTML;
+            if(currentText === 'JavaScript is Cool!') {
+                document.getElementById('main-header').innerHTML = 'Hello World!';
+            } else {
+                document.getElementById('main-header').innerHTML = 'JavaScript is Cool!'
+            }
+        });
+
+
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
 console.log(subHeader)
 
         // TODO: Set the text color of subHeader to blue
-subHeader.style.color = 'blue';
-console.log(subHeader)
+// subHeader.style.color = 'blue';
+// console.log(subHeader)
+        // make button to Set the text color of subHeader to blue
+
+        // var buttonTwo  = document.getElementById('btn2')
+        // buttonTwo.addEventListener('click', function () {
+        //     return subHeader.style.color = 'blue';
+        // });
+
+//change back and forth:
+
+        var buttonTwo = document.getElementById('btn2');
+        buttonTwo.addEventListener('click', function () {
+            console.log(buttonTwo)
+            let currentColor = document.getElementById('sub-header').style.color;
+            if(currentColor === 'blue') {
+                document.getElementById('sub-header').style.color = 'unset';
+            } else {
+                document.getElementById('sub-header').style.color = 'blue'
+            }
+        });
+
+
+
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
 console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        var listItems = document.getElementsByTagName("li");
-        console.log(listItems);
-        for (var i = 0; i < listItems.length; i+= 2){
-            listItems[i].style.color = "grey";
-        }
-        listItems[0].style.color = "blue";
+
+        // var listItems = document.getElementsByTagName("li");
+        // console.log(listItems);
+        // for (var i = 0; i < listItems.length; i+= 2){
+        //     listItems[i].style.color = "grey";
+        // }
+        // listItems[0].style.color = "blue";
+
+//make button to make these changes when clicked
+
+        var buttonThree = document.getElementById('btn3');
+        buttonThree.addEventListener('click', function () {
+            for (var i = 0; i < listItems.length; i++) {
+                    var currentDbidValue = listItems[i].getAttribute('data-dbid');
+                    if (currentDbidValue === '1')  {
+                        listItems[i].style.color = 'blue'
+                    } else if (i % 2 === 0) {
+                        listItems[i].style.color = "grey"
+                    }
+                }
+        });
+
+// button changes:
+
+        // var buttonThree = document.getElementById('btn3');
+        // buttonThree.addEventListener('click', function () {
+        //     console.log(buttonThree)
+
+
+
 
         // //or
         // for (var i = 0; i < listItems.length; i++) {
-        //     var currentDbidValue = listeItems[i].getAttribute('data-dbid');
+        //     var currentDbidValue = listItems[i].getAttribute('data-dbid');
         //     if (currentDbidValue === '1')  {
         //         listItems[i].style.color = 'blue'
         //     } else if (i % 2 === 0) {
@@ -82,8 +161,16 @@ console.log(listItems);
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         // subParagraphs.innerText = "Mission Accomplished!"
         //or
-        var subParagraphs = subParagraphs[0]
-        subParagraphs.innerText = "Mission Accomplished!"
+        // var subParagraphs = subParagraphs[0]
+        // subParagraphs.innerText = "Mission Accomplished!"
+
+        // make button to make change when clicked
+
+        var buttonFour = document.getElementById('btn4');
+
+        buttonFour.addEventListener('click', function () {
+            return subParagraphs[0].innerText = 'Mission Accomplished!';
+        });
 
     })();
 </script>
