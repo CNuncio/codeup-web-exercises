@@ -1,0 +1,14 @@
+.invisible {
+    visibility: hidden;
+}
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    color: deeppink;
+}
+.dt-headings {
+    background-color: deeppink;
+}

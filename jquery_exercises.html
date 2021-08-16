@@ -1,71 +1,123 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <meta name="description" content="">-->
+<!--    <meta name="author" content="">-->
+<!--    <title>jQuery Selectors Lecture</title>-->
+
+<!--    &lt;!&ndash; Bootstrap Core CSS &ndash;&gt;-->
+
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+<!--    <style>-->
+<!--        h1 {-->
+<!--            background-color: aquamarine;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header class="container" id="con1">-->
+<!--    <h1>The Witches of Ol'Mar</h1>-->
+<!--    <h3>The Moore Siblings</h3>-->
+<!--    <ul>-->
+<!--        <li>Nathaniel Galloway</li>-->
+<!--        <li>Phylor Moore</li>-->
+<!--        <li>Phylestina Moore</li>-->
+<!--        <li>Elyphaeba Y'Moon</li>-->
+<!--        <li>Seraphynia Moore</li>-->
+<!--    </ul>-->
+<!--    <br>-->
+<!--    <div class= "divClass" id="someDiv">This is one magical div.</div>-->
+<!--    <br>-->
+<!--    <p class="paragraph" id="para1">-->
+<!--        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aliquam, blanditiis consequuntur cum cumque-->
+<!--        delectus, eos et harum illum inventore ipsa laudantium, magni numquam obcaecati sapiente sunt veritatis! Fugiat!-->
+<!--    </p>-->
+<!--    <p class="paragraph" id="para2">-->
+<!--        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolor, est expedita hic, inventore ipsa-->
+<!--        laboriosam laborum laudantium necessitatibus nisi nostrum nulla, omnis pariatur qui quis quo recusandae suscipit-->
+<!--        unde!-->
+<!--    </p>-->
+
+<!--    <script-->
+<!--            src="https://code.jquery.com/jquery-2.2.4.js"-->
+<!--            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="-->
+<!--            crossorigin="anonymous"></script>-->
+
+<!--    &lt;!&ndash; Bootstrap Core JavaScript &ndash;&gt;-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
+<!--            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
+<!--            crossorigin="anonymous"></script>-->
+
+<!--    &lt;!&ndash; Custom JS &ndash;&gt;-->
+<!--    <script>-->
+
+<!--        $(document).ready(function () {-->
+<!--            "use strict";-->
+
+<!--        });-->
+
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>jQuery Selectors Lecture</title>
-
-    <!-- Bootstrap Core CSS -->
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <style>
-        h1 {
-            background-color: aquamarine;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>jQuery Exercises</title>
 </head>
 <body>
-<main class="container">
-    <h1>The Witches of Ol'Mar</h1>
-    <h3>The Moore Siblings</h3>
+<header id="head">
+    <h1>jQuery Exercises</h1>
+    <p id="pracJ">The Witches of Ol'Mar</p>
+</header>
+
+<div>
+    <h1 id="H1" class="firstClass">The Moore Siblings</h1>
     <ul>
-        <li>Nathaniel Galloway</li>
+        <li class="listClass">Nathaniel Galloway</li>
         <li>Phylor Moore</li>
         <li>Phylestina Moore</li>
         <li>Elyphaeba Y'Moon</li>
+        <li>Agatha Moore</li>
+        <li></li>
         <li>Seraphynia Moore</li>
     </ul>
-    <br>
-    <div class= "divClass" id="someDiv">This is one magical div.</div>
-    <br>
-    <p class="paragraph" id="para1">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aliquam, blanditiis consequuntur cum cumque
-        delectus, eos et harum illum inventore ipsa laudantium, magni numquam obcaecati sapiente sunt veritatis! Fugiat!
-    </p>
-    <p class="paragraph" id="para2">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolor, est expedita hic, inventore ipsa
-        laboriosam laborum laudantium necessitatibus nisi nostrum nulla, omnis pariatur qui quis quo recusandae suscipit
-        unde!
-    </p>
+</div>
+<div class="codeup">
+    <h1 id="H2">Favorite Games</h1>
+    <ul>
+        <li>Gotcha Force</li>
+        <li>Persona 4</li>
+        <li>Super Mario Odyssey</li>
+        <li>River City Girls</li>
+    </ul>
+</div>
 
-    <script
-            src="https://code.jquery.com/jquery-2.2.4.js"
-            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-            crossorigin="anonymous"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    alert($("#first-heading").html());
+    // alert($("#second-heading").html());
+    // $(".codeup").css("border", "1px solid red");
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+    $("li").css("font-size", "20px");
 
-    <!-- Custom JS -->
-    <script>
+    $("h1").css("background-color", "#ef0");
+    $("p").css("background-color", "palevioletred");
+    $("li").css("background-color", "skyblue");
 
-        $(document).ready(function () {
-            "use strict";
+    $("h1").each(function () {
+        alert($("h1").html());
+    });
 
-        });
-
-    </script>
-</body>
-</html>
-
+    $("h1, p, li").css({"background-color": "darkred", "border": "solid 1px gold", "color": "white"});
 //<!--Create content in your HTML file using at least the following elements: h1, p, ul, li, div.-->
-<!--Add several attributes to your elements; you will need both id and class attributes.-->
+//<!--Add several attributes to your elements; you will need both id and class attributes.-->
 <!--Use jQuery to select an element by the id. Alert the contents of the element.-->
 <!--Update the jQuery code to select and alert a different id.-->
 <!--Use the same id on 2 elements. How does this change the jQuery selection?-->
