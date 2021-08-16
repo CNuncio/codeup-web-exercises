@@ -42,28 +42,28 @@
 console.log(mainHeader)
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-// mainHeader.innerHTML = "JavaScript is Cool."
+mainHeader.innerHTML = "JavaScript is Cool."
 
-        //make button that changes it to "JavaScript is Cool."
+        // make button that changes it to "JavaScript is Cool."
 
-        // var buttonOne = document.getElementById('btn1');
-        //
-        // buttonOne.addEventListener('click', function () {
-        //     return mainHeader.innerHTML = 'Javascript is Cool';
-        // });
+        var buttonOne = document.getElementById('btn1');
+
+        buttonOne.addEventListener('click', function () {
+            return mainHeader.innerHTML = 'Javascript is Cool';
+        });
 
         // to make it switch back and forth:
 
-        var buttonOne = document.getElementById('btn1');
-        buttonOne.addEventListener('click', function () {
-            console.log(buttonOne)
-            let currentText = document.getElementById('main-header').innerHTML;
-            if(currentText === 'JavaScript is Cool!') {
-                document.getElementById('main-header').innerHTML = 'Hello World!';
-            } else {
-                document.getElementById('main-header').innerHTML = 'JavaScript is Cool!'
-            }
-        });
+        // var buttonOne = document.getElementById('btn1');
+        // buttonOne.addEventListener('click', function () {
+        //     console.log(buttonOne)
+        //     let currentText = document.getElementById('main-header').innerHTML;
+        //     if(currentText === 'JavaScript is Cool!') {
+        //         document.getElementById('main-header').innerHTML = 'Hello World!';
+        //     } else {
+        //         document.getElementById('main-header').innerHTML = 'JavaScript is Cool!'
+        //     }
+        // });
 
 
         // TODO: Uncomment the next line and get the sub header element by id

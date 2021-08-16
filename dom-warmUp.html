@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Warmups</title>
+</head>
+<body>
+<h1 id="goodMorning">Good Morning, Draco!</h1>
+<button id="afternoon">It's afternoon</button>
+<script>
+
+  "use strict";
+
+  var header = document.getElementById('goodMorning');
+  console.log(header)
+  var button = document.getElementById('afternoon');
+
+  button.addEventListener('click', function () {
+    return header.innerHTML = 'Good Afternoon, Draco.';
+  });
+
+
+
+  // var afternoonButton = document.getElementById("afternoon");
+  // var header = document.getElementById("goodMorning");
+  // var changeHeader = function () {
+  //   header.innerHTML = "Good Afternoon, Draco!"
+  // }
+  // afternoonButton.addEventListener('click', changeHeader);
+
+  // function buttonPress() {
+  //   var changeButton = document.getElementById('goodMorning');
+  //   return changeButton.innerText = 'Good Afternoon, Draco!'
+  //
+  // }
+  //
+  // document.getElementById('afternoon').addEventListener('click',buttonPress)
+
+
+
+  // to make it switch back and forth:
+
+  var button = document.getElementById('afternoon');
+  button.addEventListener('click', function () {
+      console.log(button)
+      let currentText = document.getElementById('header').innerHTML;
+      if(currentText === 'Good Afternoon, Draco!') {
+          document.getElementById('header').innerHTML = 'Good Morning, Draco!';
+      } else {
+          document.getElementById('header').innerHTML = 'Good Afternoon, Draco!'
+      }
+  });
+
+
+  // var buttonOne = document.getElementById('btn1');
+  // buttonOne.addEventListener('click', function () {
+  //     console.log(buttonOne)
+  //     let currentText = document.getElementById('main-header').innerHTML;
+  //     if(currentText === 'JavaScript is Cool!') {
+  //         document.getElementById('main-header').innerHTML = 'Hello World!';
+  //     } else {
+  //         document.getElementById('main-header').innerHTML = 'JavaScript is Cool!'
+  //     }
+  // });
+
+
+</script>
+</body>
+</html>
