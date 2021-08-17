@@ -7,6 +7,17 @@
 <body>
 <h1 id="goodMorning">Good Morning, Draco!</h1>
 <button id="afternoon">It's afternoon</button>
+
+<section>
+  <button data-number="1">Change Me</button>
+  <button data-number="2">Change Me Too</button>
+  <button data-number="3">Don't forget about me</button>
+  <p id="message"></p>
+</section>
+<button id="reset">Reset</button>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--<link rel="stylesheet" href="css/dom-Warmup.css">-->
+
 <script>
 
   "use strict";
@@ -18,8 +29,18 @@
   button.addEventListener('click', function () {
     return header.innerHTML = 'Good Afternoon, Draco.';
   });
+// hover over buttons they turn hot pink and number shows up underneath them when hovering//
 
-
+  $("section button").hover(
+          function(e){
+            $(e.target).css("background-color", "deeppink");
+            var number = $(this).attr("data-number");
+            $("#message").html(number);
+          },
+          function(e) {
+            $(e.target).css("background-color", "white");
+            $("#message").html("");
+          });
 
   // var afternoonButton = document.getElementById("afternoon");
   // var header = document.getElementById("goodMorning");
