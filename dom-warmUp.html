@@ -18,6 +18,16 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!--<link rel="stylesheet" href="css/dom-Warmup.css">-->
 
+<section>
+  <input type="text" id="wordToDisplay">
+  <button id="displayWord">Display in DOM</button>
+  <p id="word"></p>
+</section>
+<section>
+  <button id="create-an-element">Create an Element</button>
+</section>
+hes
+
 <script>
 
   "use strict";
@@ -29,6 +39,7 @@
   button.addEventListener('click', function () {
     return header.innerHTML = 'Good Afternoon, Draco.';
   });
+
 // hover over buttons they turn hot pink and number shows up underneath them when hovering//
 
   $("section button").hover(
@@ -84,6 +95,23 @@
   //     }
   // });
 
+
+  //will print whatever user puts in
+
+  $("#displayWord").on('click', function() {
+    var word = $("wordToDisplay").val();
+    $("#word").html(word);
+  });
+
+  //or
+//   $("#displayWord").on('click', function() {
+// $("#word").html($("#wordToDisplay").val());
+//   });
+
+  //will create word repeat on display after pressing button:
+ $("#create-an-element").on('click', function() {
+   $(this).after('<p>User</p>');
+ });
 
 </script>
 </body>
