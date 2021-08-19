@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ajax-blog</title>
 </head>
+<h1> My First Blog </h1>
 <body>
 
+<div id="posts">
+
+</div>
+
 </body>
+
+<script>
+
+    $.get("data/blog.json").done(function(blogData) {
+        console.log(blogData);
+        console.log(data[0].title);
+    });
+
+</script>
 </html>

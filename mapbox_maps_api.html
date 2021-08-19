@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'/>
+    <script src='js/mapbox-geocoder-utils.js'></script>
+    <script src='js/keys.js'></script>
+</head>
+
+<body>
+<h1>Favorite Restaurants:</h1>
+
+<div id="newMap" style="width: 100%; height: 700px;"></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = MAPBOX_API_TOKEN;
+  var map = new mapboxgl.Map({
+    container: "newMap", // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [139.6503, 35.6762],// starting position [lng, lat]
+    zoom: 12 // starting zoom
+  });
+
+
+  var marker = new mapboxgl.Marker({draggable:true})
+      .setLngLat([139.81189953628237, 35.71040042799004])
+      .addTo(map)
+  marker.on('click', function () {
+  })
+
+  var popup = new mapboxgl.Popup()
+      .setLngLat([139.81189953628237, 35.71040042799004])
+      .setHTML("<h1>Kirby Cafe</h1>")
+      .addTo(map);
+
+
+  geocode("Sumida City, Tokyo, Japan", MAPBOX_API_TOKEN).then(function(results) {
+      console.log(results);
+      map.setCenter(results);
+  });
+
+
+ // do not use:
+
+//   // marker.setPopup()
+//
+//   marker.on('click', 'places', (e) => {
+// // Copy coordinates array.
+//       const coordinates = e.features[0].geometry.coordinates.slice();
+//       const description = e.features[0].properties.description;
+//
+// // Ensure that if the map is zoomed out such that multiple
+// // copies of the feature are visible, the popup appears
+// // over the copy being pointed to.
+//       while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+//           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+//       }
+
+
+
+</script>
+
+<!--<style>-->
+<!--.marker {-->
+<!--background-image: url('mapbox-icon.png');-->
+<!--background-size: cover;-->
+<!--width: 50px;-->
+<!--height: 50px;-->
+<!--border-radius: 50%;-->
+<!--cursor: pointer;-->
+<!--}-->
+<!--</style>-->
+</body>
+</html>

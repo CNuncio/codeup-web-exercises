@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'/>
+
+    <script src='js/mapbox-geocoder-utils.js'></script>
+    <script src='js/keys.js'></script>
+</head>
+<h1>Coordinates: <span id='coordinates'></span></h1>
+<body>
+
+
+<div id="geoMap" style="width: 100%; height: 700px;"></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+
+<script>
+
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    var map = new mapboxgl.Map({
+        container: "geoMap", // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.489615, 29.426827], // starting position
+        zoom: 9 // starting zoom
+    });
+//get console to show you coordinates of address
+    geocode("Mount Holyoke College", MAPBOX_API_TOKEN).then(function(results) {
+   console.log(results);
+   map.setCenter(results);
+    });
+//get console to show you address of coordinates
+    reverseGeocode({lng: -72.573355, lat: 42.255459}, MAPBOX_API_TOKEN).then(function(results) {
+        console.log(results);
+    });
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'/>
+
+  <script src='js/keys.js'></script>
+</head>
+<h1>Coordinates: <span id='coordinates'></span></h1>
+<body>
+
+
+<div id="newMap" style="width: 100%px; height: 700px;"></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = MAPBOX_API_TOKEN;
+  var map = new mapboxgl.Map({
+    container: "newMap", // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-77.0069, 38.9072], // starting position
+    zoom: 10 // starting zoom
+  });
+// map.getCenter()
+//   map.setZoom(3);
+
+  //add marker
+  var marker = new mapboxgl.Marker({draggable:true})
+          .setLngLat([-77.0502, 38.8893])
+          .addTo(map)
+  marker.on('click', function () {
+  })
+
+
+  var popup = new mapboxgl.Popup()
+          .setLngLat([-77.0502, 38.8893])
+          .setHTML("<h1>Lincoln Memorial</h1>")
+          .addTo(map);
+
+marker.on('dragend', function () {
+  var coor = marker.getLngLat()
+  document.querySelector('#coordinates').innerHTML = marker.getLngLat();
+  // // just want lat: var lat = marker.getLngLat()
+  // document.querySelector('#coordinates').innerHTML = lat.lat();
+});
+</script>
+
+</body>
+</html>

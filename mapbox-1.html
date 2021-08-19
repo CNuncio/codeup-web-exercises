@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Map</title>
+<!--  <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'/>-->
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='js/keys.js'></script>
+</head>
+
+<body>
+
+
+<div id="newMap" style="width: 100%; height: 700px;"></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = MAPBOX_API_TOKEN;
+  var map = new mapboxgl.Map({
+    container: "newMap", // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-98.489615, 29.426827], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+  });
+
+
+  setTimeout(function() {
+    map.setZoom(3);
+    map.setStyle('mapbox://styles/mapbox/satellite-v9')
+    //for center in country and add coordinates:
+    // map.setCenter([,]);
+  }, 5000);
+
+
+  //add marker
+var marker = new mapboxgl
+        .Marker()
+        .setLngLat([-98.4861,29.4260])
+        .addTo(map)
+  marker.on('click', function () {
+    alert('clicked on the marker!')
+  })
+
+  //add popup
+  var popup = new mapboxgl.Popup()
+  .setLngLat([-98.4861, 29.4260])
+  .setHTML("<h1>Go Spurs Go</h1>")
+  .addTo(map);
+
+//adding popup to marker:
+var aSinglePopup = new mapbox.gl.Popup()
+  .setHTML("<h1>:D</h1>")
+
+</script>
+
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Title</title>-->
+<!--  <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'/>-->
+
+<!--  <script src='js/keys.js'></script>-->
+<!--</head>-->
+
+<!--<body>-->
+
+
+<!--<div id="newMap" style="width: 800px; height: 600px;"></div>-->
+<!--<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>-->
+<!--<script>-->
+<!--  mapboxgl.accessToken = MAPBOX_API_TOKEN;-->
+<!--  var map = new mapboxgl.Map({-->
+<!--    container: "newMap", // container ID-->
+<!--    style: 'mapbox://styles/mapbox/streets-v11', // style URL-->
+<!--    center: [-74.5, 40], // starting position [lng, lat]-->
+<!--    zoom: 9 // starting zoom-->
+<!--  });-->
+
+<!--  map.setZoom(5);-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
