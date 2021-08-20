@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'/>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+    <title>Weather Map Project</title>
+</head>
+<body>
+
+<script>
+
+    //convert API data/time response to JS Date Object
+    // new date (second ^ 1000)
+
+    $.get('https://api.openweathermap.org/data/2.5/onecall', {
+        appid: Weather_App_ID,
+        lat: 29.4252,
+        lon: -98.4916,
+        units: 'imperial',
+        exclude: 'minutely, hourly'
+    }).done(function (data) {
+        console.log(data);
+        // console.log(data.daily[0].humidity);
+        // console.log(data.current.clouds)
+
+        data.daily.forEach(function(day) {
+            console.log(day.humidity);
+        })
+
+    }).fail(function(error) {
+        console.log(error);
+    });
+
+
+</script>
+
+
+
+</body>
+</html>

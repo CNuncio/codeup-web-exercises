@@ -17,7 +17,6 @@
 
 <script>
 
-
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
     var map = new mapboxgl.Map({
         container: "geoMap", // container ID
@@ -26,7 +25,7 @@
         zoom: 9 // starting zoom
     });
 //get console to show you coordinates of address
-    geocode("Mount Holyoke College", MAPBOX_API_TOKEN).then(function(results) {
+    geocode("200 Duckhaven Rockport, Texas 78382", MAPBOX_API_TOKEN).then(function(results) {
    console.log(results);
    map.setCenter(results);
     });
@@ -38,5 +37,6 @@
 
 </script>
 
+<!--200 Duckhaven Rockport Texas 78382-->
 </body>
 </html>
