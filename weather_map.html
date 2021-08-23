@@ -1,42 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'/>
-    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>WeatherMap Project</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'>
+<!--    <link href="css/weather_map_css.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js%27%3E"></script>
 
-    <title>Weather Map Project</title>
 </head>
 <body>
 
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js%22%3E"></script>
+    <script src="https://ajax.googleapis.com"></script>
+
+<!--<form>-->
+<!--    <input id="location-input" type="text">-->
+<!--    <button id="search-btn">Search</button>-->
+<!--</form>-->
+
+<div class="card" style="width: 18rem;"></div>
+
+<div id="geoMap" style="width: 100%; height: 700px;"></div>
+
 <script>
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    var map = new mapboxgl.Map({
+        container: "geoMap", // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.489615, 29.426827], // starting position
+        zoom: 9 // starting zoom
+    });
 
     //convert API data/time response to JS Date Object
     // new date (second ^ 1000)
+// function theWeather(data) {
 
     $.get('https://api.openweathermap.org/data/2.5/onecall', {
         appid: Weather_App_ID,
         lat: 29.4252,
         lon: -98.4916,
         units: 'imperial',
-        exclude: 'minutely, hourly'
-    }).done(function (data) {
-        console.log(data);
-        // console.log(data.daily[0].humidity);
-        // console.log(data.current.clouds)
+        exclude: 'minutely,hourly',
+    }).done(function(data) {
+console.log(data);
 
-        data.daily.forEach(function(day) {
-            console.log(day.humidity);
-        })
+            for (var i= 0; i < data.daily.length -3; i++) {
+
+                var theFirstCardData = "<div>" + data.daily[i].temp.max + "°F" + "/" + data.daily[i].temp.min + "°F " + "</div> ";
+                theFirstCardData += "<ul>" + "<li>" + "Description: " + " " + data.daily[i].weather[0].description + "</li>";
+                theFirstCardData += "<li>" + "Humidity: " + data.daily[i].humidity + "</li>";
+                theFirstCardData += "<li>" + "Wind: " + data.daily[i].wind_speed + "</li>";
+                theFirstCardData += "<li>" + "Pressure: " + data.daily[i].pressure + "</li>" + "</ul>";
+                console.log(theFirstCardData)
+                $('.card').append(theFirstCardData)
+            };
 
     }).fail(function(error) {
         console.log(error);
     });
 
 
+    // Add the control to the map.
+    map.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        })
+    );
+
+    // map.on('click', function(e) {
+    //     console.log(e);
+    // });
+
 </script>
-
-
 
 </body>
 </html>
+
+
+<!--// function getCard2Data() {-->
+<!--        //-->
+<!--        //     var theSecondCardData = "<div>" + data.daily[1].temp.max + "°F" + "/" + data.daily[1].temp.min + "°F " + "</div> ";-->
+<!--        //-->
+<!--        //     theSecondCardData += "<ul>" + "<li>" + "Description: " + " " + data.daily[1].weather[0].description + "</li>";-->
+<!--        //     theSecondCardData += "<li>" + "Humidity: " + data.daily[1].humidity + "</li>";-->
+<!--        //     theSecondCardData += "<li>" + "Wind: " + data.daily[1].wind_speed + "</li>";-->
+<!--        //     theSecondCardData += "<li>" + "Pressure: " + data.daily[1].pressure + "</li>" + "</ul>";-->
+<!--        //     return theSecondCardData-->
+<!--        // }-->
+<!--        //-->
+<!--        // $('.card2').append(getCard2Data)-->
+
+
+<!--        // getData()-->
+
+<!--        // $("#loadData").on('click', function(){-->
+<!--        //     $("#insertProducts").html('');-->
+<!--        //     getData();-->
+<!--        // });-->
+<!--        // })();-->
+<!--    -->
+
+<!--// $(document).ready(function() {-->
+<!--//     data.daily.-->
+<!--// })-->
+<!--// })-->
+
+
+<!--//wind speed/direction:-->
+
+<!--&lt;!&ndash;// function windCardnDir(degrees) {&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;//     let cardinalDirection = '';&ndash;&gt;-->
+<!--&lt;!&ndash;//     if ((degrees > 348.75 && degrees <= 360) || (degrees >= 0 && degrees <= 11.25)) {&ndash;&gt;-->
+<!--//     cardinalDirection = "N";-->
+<!--// } else if (degrees > 11.25 && degrees <= 33.75) {-->
+<!--//     cardinalDirection = "NNE";-->
+<!--//     } else if (degrees > 33.75 && degrees <= 56.25) {-->
+<!--//         cardinalDirection = "NE";-->
+<!--//     } else if (degrees > 56.25 && degrees <= 78.75) {-->
+<!--//         cardinalDirection = "ENE";-->
+<!--//     } else if (degrees > 78.75 && degrees <= 101.25) {-->
+<!--//         cardinalDirection = "E";-->
+<!--//     } else if (degrees > 101.25 && degrees <= 123.75) {-->
+<!--//         cardinalDirection = "ESE";-->
+<!--//     } else if (degrees > 123.75 && degrees <= 146.25) {-->
+<!--//         cardinalDirection = "SE";-->
+<!--//     } else if (degrees > 146.25 && degrees <= 168.75) {-->
+<!--//         cardinalDirection = "SSE";-->
+<!--//     } else if (degrees > 168.75 && degrees <= 191.25) {-->
+<!--//         cardinalDirection = "S";-->
+<!--//     } else if (degrees > 191.25 && degrees <= 213.75) {-->
+<!--//         cardinalDirection = "SSW";-->
+<!--//     } else if (degrees > 213.75 && degrees <= 236.25) {-->
+<!--//         cardinalDirection = "SW";-->
+<!--//     } else if (degrees > 236.25 && degrees <= 258.75) {-->
+<!--//         cardinalDirection = "WSW";-->
+<!--//     } else if (degrees > 258.75 && degrees <= 281.25) {-->
+<!--//         cardinalDirection = "W";-->
+<!--//     } else if (degrees > 281.25 && degrees <= 303.75) {-->
+<!--//         cardinalDirection = "WNW";-->
+<!--//     } else if (degrees > 303.75 && degrees <= 326.25) {-->
+<!--//         cardinalDirection = "NW";-->
+<!--//     } else if (degrees > 326.75 && degrees <= 348.75) {-->
+<!--//         cardinalDirection = "NNW";-->
+<!--//     }-->
+<!--//     return cardinalDirection;-->
+<!--// }-->
+<!--//-->
+
+<!--function getData(){-->
+<!--$.get("/data/inventory.json").done(function(data){-->
+<!--data.forEach(function(tool){-->
+<!--$("#insertProducts").append("<tr>" +-->
+<!--    "<td>" + tool.title + "</td>" +-->
+<!--    "<td>" + tool.quantity + "</td>" +-->
+<!--    "<td>" + tool.price + "</td>" +-->
+<!--    "<td>" + tool.categories.join(', ') + "</td>" +-->
+<!--    "</tr>");-->
+<!--});-->
+<!--});-->
+<!--}-->

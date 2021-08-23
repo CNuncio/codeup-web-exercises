@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
   <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src='js/keys.js'></script>
 </head>
 <body>
 
@@ -19,7 +20,8 @@
     units: 'imperial',
     exclude: 'minutely, hourly'
   }).done(function (data) {
-    console.log(data);
+      console.log(data);
+
     // console.log(data.daily[0].humidity);
     // console.log(data.current.clouds)
 
