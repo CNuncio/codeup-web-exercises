@@ -13,3 +13,59 @@
     display: none;
 }
 
+.card {
+    display: flex;
+    padding-top: 25px;
+    justify-content: space-between;
+    align-content: space-evenly;
+    border: 8px solid black;
+    text-align: center;
+    padding-right: 15px;
+    font-weight: bold;
+
+}
+
+#geoMap {
+  padding-left: 100px;
+justify-content: center;
+    margin-left: 110px;
+    margin-top: 100px;
+
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+#inputs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.container {
+    z-axis: 10;
+}
+
+
+/*.welcome-text {*/
+/*    position: relative;*/
+/*    !* make it position:absolute instead if you want it to be centered as shown below*!*/
+/*    z-index: 1;*/
+/*}*/
+/*.video-content{*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    overflow: hidden;*/
+/*    position: relative;*/
+/*}*/
+/*video{*/
+/*    min-width: 100%;*/
+/*    min-height: 100%;*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%) translateY(-50%);*/
+/*}*/
