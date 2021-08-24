@@ -20,28 +20,17 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js%22%3E"></script>
 <script src="https://ajax.googleapis.com"></script>
 
-<!--<div class="container-fluid no-left-padding no-right-padding welcome-text video-content">-->
-<!--    &lt;!&ndash; Container &ndash;&gt;-->
-<!--    <div class="container">-->
-<!--        <video autoplay muted loop>-->
-<!--            <source src="img/galaxyT-Lapse.mp4" type="video/mp4">-->
-<!--        </video>-->
         <div class="container">
-            <h1 style="color: darkblue">Weather Forecast</h1>
+            <h1 style="color: White">Weather Forecast</h1>
             <div class="card">
             </div>
         </div>
-<!--    </div>-->
-<!--</div>-->
 
+        <video autoplay muted loop>
+            <source src="img/galaxyT-Lapse.mp4" type="video/mp4">
+        </video>
 
-<!--<div class="container">-->
-<!--    <h1 style="color: darkblue">Weather Forecast</h1>-->
-<!--    <div class="card">-->
-<!--    </div>-->
-<!--</div>-->
-
-<div id="geoMap" style="width: 75%; height: 700px; border: 10px solid black" class="d-flex display-inline-block "></div>
+<div id="geoMap" style="width: 75%; height: 500px; border: 10px solid black" class="d-flex display-inline-block "></div>
 
     <pre id="coordinates" class="coordinates"></pre>
 
@@ -60,33 +49,38 @@
 
     //convert API data/time response to JS Date Object
     // new date (second ^ 1000)
-
+function getWeather (lat, lng) {
     $.get('https://api.openweathermap.org/data/2.5/onecall', {
         appid: Weather_App_ID,
-        lat: 29.4252,
-        lon: -98.4916,
+        lat: lat,
+        lon: lng,
         units: 'imperial',
         exclude: 'minutely,hourly',
     }).done(function weatherData(data) {
         console.log(data);
 
+        var html = "";
+
         for (var i = 0; i < data.daily.length - 3; i++) {
             var weekDay = new Date(data.daily[i].dt * 1000);
-            var theFirstCardData = "<ul>" + "<h3>" + (new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(weekDay)) + "</h3>"; //curtesy of Albert//
-            theFirstCardData += "<div>" + '<img src="http://openweathermap.org/img/wn/' + data.daily[i].weather[0].icon + '@2x.png"/>' + '</div>'
-            theFirstCardData += "<div>" + data.daily[i].temp.max + "°F" + "/" + data.daily[i].temp.min + "°F " + "</div>";
-            theFirstCardData += "<li>" + "Description: " + " " + data.daily[i].weather[0].description + "</li>";
-            theFirstCardData += "<li>" + "Humidity: " + data.daily[i].humidity + "</li>";
-            theFirstCardData += "<li>" + "Wind: " + data.daily[i].wind_speed + "</li>";
-            theFirstCardData += "<li>" + "Pressure: " + data.daily[i].pressure + "</li>" + "</ul>";
-            console.log(theFirstCardData)
-            $('.card').append(theFirstCardData)
+            html += "<ul>" + "<h3>" + (new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(weekDay)) + "</h3>" + //curtesy of Albert//
+            "<div>" + '<img src="http://openweathermap.org/img/wn/' + data.daily[i].weather[0].icon + '@2x.png"/>' + '</div>' +
+            "<div>" + data.daily[i].temp.max + "°F" + "/" + data.daily[i].temp.min + "°F " + "</div>" +
+            "<li>" + "Description: " + " " + data.daily[i].weather[0].description + "</li>" +
+            "<li>" + "Humidity: " + data.daily[i].humidity + "</li>" +
+            "<li>" + "Wind: " + data.daily[i].wind_speed + "</li>" +
+            "<li>" + "Pressure: " + data.daily[i].pressure + "</li>" + "</ul>"
+            console.log()
+            $('.card').html(html)
         };
 
     }).fail(function (error) {
         console.log(error);
     });
 
+}
+
+getWeather(29.4252, -98.4916)
 
     // Add the control to the map.
     map.addControl(
@@ -107,9 +101,21 @@
         const lngLat = marker.getLngLat();
         coordinates.style.display = 'block';
         coordinates.innerHTML = `Longitude: ${lngLat.lng}<br/>Latitude: ${lngLat.lat}`;
+        // alert(lngLat);
     }
 
     marker.on('dragend', onDragEnd);
+
+    map.on('moveend', () => {
+       var coordinates = map.getCenter();
+       // console.log(coordinates);
+        getWeather(coordinates.lat, coordinates.lng)
+    });
+
+
+    // fix bug where weather html continues to append to an existing forecast
+//get weather with draggable marker
+
 
 
 
