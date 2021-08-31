@@ -53,10 +53,10 @@
  */
   const quoteUrl = `http://quotes.stormconsultancy.co.uk/random.json`;
 
-  // fetch(quoteUrl)
-  //         .then(response => response.json())
-  //         .then(console.log)
-  //         .catch(console.log)
+  fetch(quoteUrl)
+          .then(response => response.json())
+          .then(console.log)
+          .catch(console.log)
 // or :
 //   fetch(quoteUrl)
 //           .then( response => response.json())
