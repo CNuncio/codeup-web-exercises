@@ -67,7 +67,9 @@ $(document).ready(function() {
             //For example if (status == 'error') alertTheMedia();
         });
     });
-});​
+});
+
+
 
 
 
