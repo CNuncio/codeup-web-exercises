@@ -34,7 +34,7 @@ video{
     /*border: 8px solid black;*/
     text-align: center;
     padding-right: 40px;
-    padding-left: 47px;
+    padding-left: 60px;
     width: 100%;
     opacity: 85%;
     z-index: 10;
@@ -56,6 +56,53 @@ body {
     color: yellow;
     font-family: 'Limelight', cursive;
     justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    height: 40%;
+    border: 40px solid black;
+    background: black;
+    /*padding*/
+}
+
+h2 {
+    text-align: center;
+
+}
+
+.form-group {
+    text-align: center;
+}
+
+.rating {
+    padding-right: 25px;
+}
+
+#editRating {
+    padding-right: 100px;
+}
+
+#editMovie {
+    padding-right: 80px;
+}
+
+.submitMovie {
+    display: flex;
+   max-width: 100px;
+    margin: auto;
+    /*padding-left: 500px;*/
+    /*margin-left: 470px;*/
+}
+
+#movie-selection {
+    margin: auto;
+    max-width: 250px;
+}
+
+#editButton {
+    margin: auto;
+    max-width: 100px;
 }
 
 
