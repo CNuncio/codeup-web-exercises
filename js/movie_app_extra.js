@@ -1,12 +1,18 @@
 "use strict"
+const MOVIE_URL = 'https://lyrical-intriguing-othnielia.glitch.me/movies'
+
 $(document).ready(function () {
 
-    const MOVIE_URL = 'https://lyrical-intriguing-othnielia.glitch.me/movies'
+// }
+//     window.onload = function() {
+//         document.getElementById("siteLoader").style.display = "none";
+//         document.getElementById("container").style.display = "block";
+//     }
 
-    //FETCH REQUEST AND RENDER HTML*********************************************
-    function loadScreen() {
-
-    }
+//FETCH REQUEST AND RENDER HTML*********************************************
+//     function loadScreen() {
+//
+//     }
     const getMovies = () => fetch(MOVIE_URL)
         .then(res => res.json())
         .then(movies => {
@@ -18,7 +24,7 @@ $(document).ready(function () {
                 html += `<div class="card mb-1" data-number="${movie.id}" style="width: 24rem">
                     <h3>${movie.title}</h3>
                     <h4>Rating: ${movie.rating}</h4>
-                    <button class="delMovie")">Delete</button></div>`;
+                    <button class="delMovie">Delete</button></div>`;
 
                 movieList += `<option data-number="${movie.id}">${movie.title}</option>`
             })
@@ -93,3 +99,16 @@ $(document).ready(function () {
     getMovies();
 });
 
+
+document.onreadystatechange= function () {
+    var state = document.readyState
+// window.onload = function () {
+    if (state === 'interactive') {
+        document.getElementById('someContent').style.visibility = "hidden";
+    } else if (state === 'complete') {
+        setTimeout(function () {
+            document.getElementById('gifLoader').style.visibility = "hidden";
+            document.getElementById('someContent').style.visibility = "visible";
+        }, 1000);
+    }
+}
