@@ -3,12 +3,6 @@ const MOVIE_URL = 'https://lyrical-intriguing-othnielia.glitch.me/movies'
 
 $(document).ready(function () {
 
-// }
-//     window.onload = function() {
-//         document.getElementById("siteLoader").style.display = "none";
-//         document.getElementById("container").style.display = "block";
-//     }
-
 //FETCH REQUEST AND RENDER HTML*********************************************
 //     function loadScreen() {
 //
