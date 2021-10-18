@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<button id="hide-button">Hide This Sentence</button>
+<button id="show-button">Show This Sentence</button>
+
+<p id="sentence">This sentence will vanish when the button above is clicked on.</p>
+
+<script>
+
+  $('#hide-button').click(function() {
+    $('#sentence').hide();
+  });
+
+  $('#show-button').click(function() {
+    $('#sentence').show();
+  });
+
+</script>
+
+</body>
+</html>
