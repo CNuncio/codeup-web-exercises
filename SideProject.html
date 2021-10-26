@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>CSS Practice</title>
 </head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <body>
+<h2>
 <script>
     var tarotArray = [
         "The Moon",
@@ -12,13 +14,44 @@
         "Death",
         "The Lovers",
         "The Fool",
-        "King of Chalices",
-        "Queen of Chalices",
+        "The Magician",
+        "The High Priestess",
+        "The Empress",
+        "The Emperor",
+        "The Hierophant",
+        "The Lovers",
+        "The Chariot",
+        "Strength",
+        "The Hermit",
+        "Wheel Of Fortune",
+        "Justice",
+        "The Hanged Man",
+        "Temperance",
+        "The Devil",
+        "The Tower",
+        "The Star",
+        "Judgment",
+        "The World"
+
     ];
 
     var randomCard = tarotArray[Math.floor(Math.random()*tarotArray.length)];
     console.log(randomCard)
 
+
+    function random_background_color() {
+        var a = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        var c = Math.floor(Math.random() * 256);
+        var backgroundColor = "rgb(" + a + "," + b + "," + c + ")";
+        console.log(backgroundColor);
+
+        document.body.style.background = backgroundColor;
+    }
+
+    random_background_color();
+
 </script>
+</h2>
 </body>
 </html>
