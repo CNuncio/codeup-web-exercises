@@ -29,3 +29,11 @@ decodeMorseCode = function(morseCode){
 }
 
 //unifnished
+
+//JS To show day/time as DOW
+// //in progress
+
+var today = new Day();
+var day = today.getDay()
+var DOWList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+console.log("Today's date is " +  DOWList[day] + ".")
