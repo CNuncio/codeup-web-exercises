@@ -33,7 +33,13 @@ decodeMorseCode = function(morseCode){
 //JS To show day/time as DOW
 // //in progress
 
-var today = new Day();
+var today = newDay();
 var day = today.getDay()
 var DOWList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 console.log("Today's date is " +  DOWList[day] + ".")
+// Get today's date and time
+var now = new Date().getTime();
+function todaysDate() {
+    //
+}
+
