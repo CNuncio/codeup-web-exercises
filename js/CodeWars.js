@@ -41,6 +41,7 @@ console.log("Today's date is " +  DOWList[day] + ".")
 var now = new Date().getTime();
 //show hours/min
 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 function todaysDate() {
     //
 }
