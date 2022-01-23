@@ -11,8 +11,10 @@
 </body>
 <script>
 
-    var today = newDay();
-    var day = today.getDay()
+    var hour = today.getHours();
+    var day = today.getDay();
+    var minute = today.getMinutes();
+    var second = today.getSeconds();
     var DOWList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     console.log("Today's date is " +  DOWList[day] + ".")
     // Get today's date and time
